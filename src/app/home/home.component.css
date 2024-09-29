@@ -1,0 +1,277 @@
+.torch-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    pointer-events: none;
+    z-index: 1000;
+  }
+  
+  .torch-light {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  
+  .torch-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1001;
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .header-main-connector {
+    height: 4px;
+    background-color: #333;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Adjust the main container to remove top margin */
+  main.container {
+    margin-top: 0 !important;
+    padding-top: 3rem;
+  }
+  
+  /* Add some padding to the header to separate it from the line */
+  header.container-fluid {
+    padding-bottom: 1rem;
+  }
+
+  /* .col-auto a {
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+  }
+  
+  .col-auto a:hover {
+    color: #e5e90b !important;
+  } */
+
+  .col-auto a {
+    color: inherit; /* Ensure the link color is inherited */
+    text-decoration: none; /* Remove default underline */
+    position: relative; /* Create a positioning context */
+}
+
+.col-auto a:hover {
+    color: #e5e90b !important; /* Change color on hover */
+}
+
+.col-auto a::after {
+    content: ''; /* Create a pseudo-element for the underline */
+    display: block; /* Make it a block element */
+    height: 2px; /* Height of the underline */
+    background-color: #e5e90b; /* Color of the underline */
+    position: absolute; /* Position it absolutely */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    bottom: -2px; /* Position it just below the text */
+    transform: scaleX(0); /* Start with scale 0 (hidden) */
+    transition: transform 0.3s; /* Smooth transition */
+}
+
+.col-auto a:hover::after {
+    transform: scaleX(1); /* Scale to full width on hover */
+}
+
+
+  /* styles.css */
+.full-width-section {
+    width: 100vw; /* Full viewport width */
+    position: relative;
+    left: 50%; /* Shift to the right */
+    right: 50%; /* Shift back to the left */
+    margin-left: -50vw; /* Pull the section back to the left */
+    margin-right: -50vw; /* Pull the section back to the right */
+}
+
+.my-card {
+    min-height: 300px; /* Ensures the card has a consistent height */
+    display: flex; /* Activate Flexbox */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Ensures proper spacing */
+}
+
+.my-card .mt-auto {
+    margin-top: auto; /* Pushes the container (with h4 and p) to the bottom */
+}
+
+.my-card h4,
+.my-card p {
+    margin: 0; /* Remove any extra margin if necessary */
+}
+
+.heading-with-line {
+    position: relative;
+    padding-left: 20px; /* Space for the vertical line */
+    font-weight: bold;
+}
+
+.heading-with-line::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px; /* Thickness of the vertical line */
+    background-color: #e5e90b; /* Color of the line */
+}
+
+.fact-container {
+    position: relative;
+    padding: 20px; /* Space around the fact */
+}
+
+.fact-content {
+    display: flex; /* Use flexbox for the content */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text */
+}
+
+.vertical-line {
+    width: 2px; /* Width of the vertical line */
+    height: 100px; /* Adjust height as needed */
+    background-color: white; /* Color of the line */
+    margin-left: 20px; /* Space between text and vertical line */
+}
+
+/* Hide the vertical line after the last fact */
+.row .col-md-4:last-child .vertical-line {
+    display: none;
+}
+
+
+.custom-width {
+    width: 100px; /* Set your desired width */
+}
+
+
+.discount-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ffc107;
+    color: #000;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 0 0 0 8px;
+  }
+  
+  .discount-text {
+    display: inline-block;
+    transform: rotate(0deg);
+  }
+
+  .column-bg-0 {
+    background-color: #ffcc00; /* Yellow */
+}
+
+.column-bg-1 {
+    background-color: #00cc99; /* Teal */
+}
+
+.column-bg-2 {
+    background-color: #ff5733; /* Orange-red */
+}
+
+
+.column-bg-3 {
+    background-color: #3498db; /* Blue */
+}
+
+/* Add more if you have more than 4 columns */
+
+.advertisement-block {
+    width: 100vw; /* Full viewport width */
+    margin-left: calc(50% - 50vw); /* Align to stretch edge-to-edge */
+    background-color: #f9f9f9; /* Optional: background for emphasis */
+    padding: 20px 0; /* Padding for better spacing */
+  }
+  
+  .advertisement-block img {
+    max-width: 300px; /* Optional: Limit the width of the ads */
+    margin: 0 15px; /* Spacing between ads */
+  }
+  
+  .ad-image {
+    display: block;
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .price-card {
+    background-color: #424242;
+    border-radius: 10px;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    max-width: 300px;
+    overflow: hidden;
+  }
+  .header {
+    background-color: #333333;
+    padding: 10px;
+    position: relative;
+  }
+  .medicine-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  .pill-icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  .medicine-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .mrp {
+    font-size: 16px;
+    color: #ffd700;
+  }
+  .savings {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .pharmacy-row {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #555555;
+  }
+  .cart-icon {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  .pharmacy-name {
+    flex-grow: 1;
+    font-size: 16px;
+  }
+  .price {
+    font-size: 14px;
+    color: #ffd700;
+    text-align: right;
+  }

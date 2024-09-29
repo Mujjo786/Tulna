@@ -1,0 +1,148 @@
+<div class="relative" style="background-color: lightgray;">
+    <div *ngIf="isTorchOn" class="torch-overlay">
+      <div class="torch-light" [style.left.px]="mouseX" [style.top.px]="mouseY"></div>
+    </div>
+  
+    <header class="container-fluid bg-light py-3">
+      <div class="row align-items-center">
+        <div class="col">
+          <h1 class="h4 m-0">LOGO</h1>
+        </div>
+        <div class="col-auto">
+          <nav>
+            <ul class="nav">
+              <li class="nav-item"><a href="#" class="nav-link">HOME</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">PUBLICATIONS</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">ABOUT US</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">CONTACT US</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col-auto">
+            <a routerLink="/youtube" class="me-2 text-dark">
+              <i class="bi bi-instagram" aria-hidden="true"></i>
+              <span class="visually-hidden">Instagram</span>
+            </a>
+            <a href="#" class="me-2 text-dark">
+              <i class="bi bi-twitter" aria-hidden="true"></i>
+              <span class="visually-hidden">Twitter</span>
+            </a>
+            <a href="#" class="text-dark">
+              <i class="bi bi-facebook" aria-hidden="true"></i>
+              <span class="visually-hidden">Facebook</span>
+            </a>
+          </div>
+      </div>
+    </header>
+    <div class="header-main-connector"></div>
+    <main class="container mt-5" >
+      <h3 class="text-center">Huge Collections</h3>
+      <h2 class="text-center mb-4" style="font-weight: bolder;">All the brands, You know and trust!</h2>
+  
+      <h4 class="heading-with-line" style="font-weight: lighter;">Welcome,</h4>
+  
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Type your drug name (Not Paracetamol / Crocin)">
+        <button class="btn btn-dark custom-width" type="button">Go</button>
+      </div>
+  
+      <div class="mb-4">
+        <p class="heading-with-line" style="font-weight: lighter;">Popular Searches</p>
+        <div class="d-flex flex-wrap gap-2">
+          <button *ngFor="let search of popularSearches" class="btn btn-sm btn-dark">{{ search }}</button>
+        </div>
+      </div>
+      <!-- <div class="advertisement-block">
+        <div class="d-flex justify-content-center align-items-center">
+            <img src="assets/medicaln.jpg" alt="Ad 1" class="img-fluid ad-image">
+            <img src="assets/Medical.png" alt="Ad 2" class="img-fluid ad-image">
+          </div> -->
+      <p class="text-center mb-4">Trusted by various firms across India, help us serve you better.</p>
+      
+      <div class="text-center mb-5">
+        <img src="assets/infosys.png" alt="Infosys logo" class="img-fluid" style="max-width: 150px;">
+        <img src="assets/tata.png" alt="Tata logo" class="img-fluid" style="max-width: 150px;">
+      </div>
+     
+      <!-- </div> -->
+      <div class="text-center mb-5">
+        <img src="assets/lamp-icon.png" alt="Lamp icon" class="img-fluid mb-3" style="max-width: 100px;">
+        <h3>Compare Prescription Drug Prices at Over 65,000 Pharmacies</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec elit ut orci varius lobortis. Quisque dictum pharetra est, sed lacinia dui mollis a. Vestibulum gravida, velit at maximus feugiat, odio mi varius lorem, vel sagittis turpis orci sed ipsum.</p>
+      </div>
+  
+      <div class=" row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5">
+        <div class="col" *ngFor="let drug of drugComparisons; let i = index">
+          <div class="card bg-dark text-white">
+            <div class="card-body position-relative">
+              <h5 class="card-title drug-name">{{ drug.name }}</h5>
+              <p class="card-text drug-pharmacy">{{ drug.pharmacy }}</p>
+              <p class="card-text text-warning drug-price">{{ drug.price }}</p>
+              <div class="discount-badge">
+                <span class="discount-text">{{ drug.discount }} OFF</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="text-center mb-5">
+        <button class="btn btn-dark" (click)="navigateTo()">View All Price Discounts</button>
+      </div>
+  
+      <section class="bg-light py-5 full-width-section">
+        <div class="container">
+            <div class="row">
+                <!-- Heading will align with the first card column -->
+                <div class="col-md-4">
+                    <h3 class="heading-with-line mb-4">How Tulna Works?</h3>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-4" *ngFor="let step of howItWorks">
+                    <div class="bg-warning p-4 h-100 d-flex flex-column my-card">
+                        <div class="mt-auto">
+                            <h4>Step {{ step.step }}</h4>
+                            <br>
+                            <p>{{ step.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button class="btn btn-dark">View Video on Youtube</button>
+            </div>
+        </div>
+    </section>
+    
+  
+    <section class="bg-dark text-white py-5 mt-5 px-3">
+        <h3 class="heading-with-line mb-4">Know Your Facts!</h3>
+        <div class="row text-center">
+            <div class="col-md-4" *ngFor="let fact of facts">
+                <div class="fact-container d-flex align-items-center justify-content-center"> <!-- Flex container -->
+                    <div class="fact-content d-flex flex-column justify-content-center">
+                        <h3 class="text-warning">{{ fact.value }}</h3>
+                        <p>{{ fact.description }}</p>
+                    </div>
+                    <div class="vertical-line"></div> <!-- Vertical line beside each fact -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
+  
+      <section class="py-5">
+        <h3 class="heading-with-line mb-4">Unlock Offers and Coupons</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec elit ut orci varius lobortis. Quisque dictum pharetra est, sed lacinia dui mollis a. Vestibulum gravida, velit at maximus feugiat, odio mi varius lorem, vel sagittis turpis orci sed ipsum. Ut eget efficitur ligula, et egestas dui.</p>
+      </section>
+    </main>
+  
+    <button (click)="toggleTorch()" class="torch-toggle">
+      {{ isTorchOn ? 'Turn Off Torch' : 'Turn On Torch' }}
+    </button>
+  </div>
+
